@@ -1,0 +1,10 @@
+<nav class="terminal-nav">
+  <div class="nav-wrapper">
+    <a href="/" class="terminal-prompt-link">
+      <span class="t-letter">t</span><span class="a1-letter">a</span><span class="n-letter">n</span><span class="m-letter">m</span><span class="a2-letter">a</span><span class="y-letter">y</span><span class="s-letter">s</span><span class="p-letter">p</span><span class="a3-letter">a</span><span class="c-letter">c</span><span class="e-letter">e</span>
+    </a>
+    {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}" class="nav-item{{ if eq $.RelPermalink .URL }} active{{ end }}">{{ .Name | strings.TrimPrefix "/" | title }}</a>
+    {{ end }}
+  </div>
+</nav>

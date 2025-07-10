@@ -1,0 +1,29 @@
+baseURL = "https://example.com/"
+languageCode = "en-us"
+title = "tanmayspace"
+theme = ""
+paginate = 5
+
+[params]
+  description = "A terminal-styled portfolio built with Hugo and Terminal CSS"
+
+[menu]
+  [[menu.main]]
+    name = "/about"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "/projects"
+    url = "/projects/"
+    weight = 2
+
+  [[menu.main]]
+    name = "/posts"
+    url = "/posts/"
+    weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

@@ -1,0 +1,32 @@
+{{ define "main" }}
+<div class="homepage-content">
+  <h2>About</h2>
+  {{ with .Site.GetPage "about" }}
+    {{ $sentences := split .Plain "." }}
+    {{ if gt (len $sentences) 0 }}
+      <p>{{ index $sentences 0 }}. <a href="{{ .RelPermalink }}" class="more-link">(more)</a></p>
+    {{ end }}
+  {{ end }}
+  <b><i>PS: Do not click on the 'Trash' icon </i></b>
+
+  <h2>Latest Posts</h2>
+  {{ range first 5 (where .Site.RegularPages "Section" "posts") }}
+    <div class="post-entry">
+      <div class="post-header">
+        <span class="date">{{ .Date.Format "Jan. 2, 2006" }}</span>
+        <a href="{{ .RelPermalink }}" class="post-title">{{ .Title }}</a>
+      </div>
+      <div class="post-summary">{{ .Summary }}</div>
+    </div>
+  {{ end }}
+
+  <h2>Latest Projects</h2>
+  <div class="photo-grid">
+    {{ range $i := seq 3 }}
+      <div class="photo-frame">
+        <img src="/photos/photo{{ $i }}.jpg" alt="Photo {{ $i }}" />
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

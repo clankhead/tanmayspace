@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ .Site.Title }}</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/css/terminal.css">
+  <link rel="stylesheet" href="/css/custom.css">
+</head>
+<body class="terminal{{ if .IsHome }} home{{ end }}{{ with .Section }} {{ . }}-page{{ end }}{{ if and (eq .Kind "page") (eq .Section "") }} about-page{{ end }}{{ if and (eq .Kind "page") (ne .Section "") }} single{{ end }}">
+    <div class="container">
+      {{ partial "nav.html" . }}
+
+      <!-- Mac Icons Sidebar -->
+      <div class="mac-sidebar">
+        <!-- Resume Icon -->
+        <a href="/resume.pdf" class="mac-icon" target="_blank">
+          <div class="doc-icon">
+            <div class="doc-lines">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div class="icon-label">Resume</div>
+        </a>
+
+        <!-- GitHub Icon - Terminal Style -->
+        <a href="https://github.com/d3adp0et" class="mac-icon" target="_blank">
+          <div class="github-icon"></div>
+          <div class="icon-label">GitHub</div>
+        </a>
+
+        <!-- LinkedIn Icon - "in" Text Style -->
+        <a href="https://linkedin.com/in/yourprofile" class="mac-icon" target="_blank">
+          <div class="linkedin-icon"></div>
+          <div class="icon-label">LinkedIn</div>
+        </a>
+
+        <!-- Mail Icon -->
+        <a href="mailto:sharma.tanm@northeastern.edu" class="mac-icon">
+          <div class="mail-icon"></div>
+          <div class="icon-label">Mail</div>
+        </a>
+
+        <!-- Trash Icon -->
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="mac-icon" target="_blank">
+          <div class="trash-icon"></div>
+          <div class="icon-label">Trash</div>
+        </a>
+      </div>
+
+      <main>
+        <div class="window-titlebar">
+          <div class="window-close-box"></div>
+          <div class="window-zoom-box"></div>
+          <div class="window-stripes"></div>
+          <div class="window-title">
+            {{ if .IsHome }}Hello{{ else if and (eq .Kind "page") (eq .Section "") }}About{{ else if eq .Section "posts" }}{{ if .IsSection }}Posts{{ else }}{{ .Title }}{{ end }}{{ else if eq .Section "photos" }}{{ if .IsSection }}Photos{{ else }}{{ .Title }}{{ end }}{{ else }}{{ .Title }}{{ end }}
+          </div>
+        </div>
+        <div class="window-content">
+          {{ block "main" . }}
+            <h1>{{ .Title }}</h1>
+            {{ .Content }}
+          {{ end }}
+        </div>
+      </main>
+
+    </div>
+</body>
+</html>

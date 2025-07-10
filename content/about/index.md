@@ -1,0 +1,129 @@
+---
+title: "About"
+---
+
+Hello there, I am Tanmay Sharma, a passionate cybersecurity agent. I like to make intriquete and cool projects by combining the worlds of Security, Programming and Hardware. Unique enough?
+
+Experienced Technical Lead and Project Intern with a background in cybersecurity, machine learning, and secure IoT solutions, particularly in research and educational settings. I have demonstrated ability in leading technical teams, building automation tools, and advancing cybersecurity initiatives, including secure network projects with Raspberry Pi and bot development for community management.
+
+## Skills
+
+<div class="skills-grid">
+  <div class="terminal-card">
+    <header>Development</header>
+    <div>C/C++, Python, Linux x86 Assembly (32bit/64bit), Bash, PowerShell, Rust (learning), SQL</div>
+  </div>
+
+  <div class="terminal-card">
+    <header>Tools</header>
+    <div>Metasploit, Wireshark, GDB Debugger, Ghidra, Nikto</div>
+  </div>
+
+  <div class="terminal-card">
+    <header>Native Hacking</header>
+    <div>Stack & Heap Buffer Overflow, Format String Vulnerability, ROP, Ret2Libc Attack</div>
+  </div>
+
+  <div class="terminal-card">
+    <header>Network Security</header>
+    <div>Cryptographic protocols, SSL/TLS, IPsec, OAuth, intrusion detection, vulnerability analysis, secure application development, penetration testing, cyber attack mitigation</div>
+  </div>
+
+  <div class="terminal-card">
+    <header>Pen Testing</header>
+    <div>Attacks on Active Directory, OSINT, Windows and Linux Privilege Escalation</div>
+  </div>
+
+  <div class="terminal-card">
+    <header>Misc</header>
+    <div>Raspberry Pi, ESP32 Microcontrollers, Flipper Zero</div>
+  </div>
+</div>
+
+## Certifications & Achievements
+
+<div class="certifications-section">
+  <div class="terminal-card">
+    <header>Certifications</header>
+    <div>
+      <p><strong>Completed:</strong> NSE 1-8 certifications, Palo Alto fundamentals of network and cloud security</p>
+      <p><strong>In Progress:</strong> PNPT (Practical Network Penetration Tester), HTB CBBH Certificate</p>
+    </div>
+  </div>
+
+  <div class="terminal-card">
+    <header>Achievements</header>
+    <div>
+      <ul>
+        <li>SimSpace Cyber Cup 2025 Top 6</li>
+        <li>Pwn.college white belt</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+## Education
+
+<div class="terminal-timeline">
+  <div class="terminal-card">
+    <header>December 2026 (Expected)</header>
+    <div>
+      <strong>Northeastern University</strong><br>
+      <em>Master of Science, Cybersecurity</em><br>
+      <small>Boston, MA | GPA: 3.58/4.00</small>
+      <p><strong>Relevant Coursework:</strong> Network Security, Binary Exploitation, Reverse Engineering, CTF, Cyberlaw</p>
+    </div>
+  </div>
+  
+  <div class="terminal-card">
+    <header>June 2024</header>
+    <div>
+      <strong>SRM Institute of Science and Technology</strong><br>
+      <em>Bachelor of Technology, Computer Science and Engineering</em><br>
+      <small>Chennai, India | GPA: 8.97/10.00</small>
+      <p><strong>Relevant Coursework:</strong> Operating Systems, Computer Architecture, Network Security and Offensive Security</p>
+    </div>
+  </div>
+</div>
+
+## Work Experience
+
+<div class="terminal-timeline">
+  <div class="terminal-card">
+    <header>September 2024 – Present</header>
+    <div>
+      <strong>Null NEU, Northeastern University</strong><br>
+      <em>Outreach Director, FOSS Contributor & Researcher</em><br>
+      <small>Boston, MA</small>
+      <ul>
+        <li>Contributed to the club's open-source GitHub repository</li>
+        <li>Organized and Outreached for Null CTF event - Hades</li>
+        <li>Facilitated outreach to security professionals and meetups, securing guest speakers to enhance the club's events and reputation</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="terminal-card">
+    <header>Spring 2024 – Present</header>
+    <div>
+      <strong>CyberspACe securiTy and forensIcs lab (CactiLab)</strong><br>
+      <em>Member</em><br>
+      <small>Boston, MA</small>
+      <ul>
+        <li>Working on reverse engineering the EdgeTPU driver on Pixel devices, to understand how the driver works and how it interfaces with the firmware</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="terminal-card">
+    <header>September 2023 – November 2023</header>
+    <div>
+      <strong>Institute for Plasma Research (IPR)</strong><br>
+      <em>Project Intern</em><br>
+      <small>Ahmedabad, India</small>
+      <ul>
+        <li>Developed a secured Raspberry Pi access point functioning as a VPN/Personal Router for public Wi-Fi use</li>
+      </ul>
+    </div>
+  </div>
+</div>

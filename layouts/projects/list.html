@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="projects-page-content">
+  <div class="projects-section">
+    {{ range .Pages }}
+      <div class="terminal-card">
+        <header>{{ .Title }}</header>
+        <div>
+          {{ .Content }}
+          {{ if .Params.github }}
+            <p><a href="{{ .Params.github }}" target="_blank" class="button">View on GitHub</a></p>
+          {{ end }}
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
