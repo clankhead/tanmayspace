@@ -1,8 +1,9 @@
-baseURL = "https://example.com/"
+baseURL = "/"
 languageCode = "en-us"
 title = "tanmayspace"
-theme = ""
-paginate = 5
+
+[pagination]
+  pagerSize = 5
 
 [params]
   description = "A terminal-styled portfolio built with Hugo and Terminal CSS"
