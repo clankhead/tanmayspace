@@ -1,7 +1,8 @@
 ---
-title: "Secure Chat Application"
+title: "Secure Instant Messaging System"
 date: 2024-01-15
 github: "https://github.com/d3adp0et/secure-chat-application"
+summary: "This project was developed as part of CY6740: Network Security at Northeastern University. It demonstrates a secure, terminal-based chat system built using modern cryptographic techniques in Python."
 ---
 
 Secure terminal-based chat app using SRP for authentication, ECDH for key exchange, and AES-GCM for encryption, developed as part of the CY6740 course - Network Security.
