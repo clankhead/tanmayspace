@@ -5,8 +5,6 @@ github: "https://github.com/d3adp0et/secure-chat-application"
 summary: "This project was developed as part of CY6740: Network Security at Northeastern University. It demonstrates a secure, terminal-based chat system built using modern cryptographic techniques in Python."
 ---
 
-# Secure Instant Messaging System
-
 A **terminal-based secure chat application** developed for Network Security coursework at Northeastern University. Built with Python, this system demonstrates enterprise-grade cryptographic protocols for secure peer-to-peer communication.
 
 ## Core Security Features
