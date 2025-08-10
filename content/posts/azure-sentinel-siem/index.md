@@ -11,7 +11,7 @@ Like many aspiring cybersecurity professionals, I wanted to get hands-on experie
 
 Spoiler alert: It was easier than I thought, but way more powerful than I imagined.
 
-![Image 1: Azure VM Configuration](content/posts/Building My First Cloud SIEM: And how you should too with Azure Sentinel/VM creation screenshot.png)(description: Screenshot showing the Azure VM creation page with deadpoet-VM1 configuration, RDP port 3389 exposed, and network settings)
+![Image 1: Azure VM Configuration](content/posts/Building My First Cloud SIEM: And how you should too with Azure Sentinel/VM-creation-screenshot2.png)(description: Screenshot showing the Azure VM creation page with deadpoet-VM1 configuration, RDP port 3389 exposed, and network settings)
 *Setting up my honeypot VM - intentionally exposed to see what happens*
 
 ## What Exactly Did I Build?
