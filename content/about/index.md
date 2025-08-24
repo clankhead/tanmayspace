@@ -87,7 +87,8 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
 </div>
 
 ## Work Experience
-  
+
+<div class="terminal-timeline">
   <div class="terminal-card">
     <header>Spring 2024 – Present</header>
     <div>
@@ -114,9 +115,7 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
       </ul>
     </div>
   </div>
-</div>
 
-<div class="terminal-timeline">
   <div class="terminal-card">
     <header>September 2024 – August 2025</header>
     <div>
@@ -130,3 +129,4 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
       </ul>
     </div>
   </div>
+</div>
