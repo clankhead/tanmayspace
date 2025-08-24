@@ -87,21 +87,6 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
 </div>
 
 ## Work Experience
-
-<div class="terminal-timeline">
-  <div class="terminal-card">
-    <header>September 2024 – Present</header>
-    <div>
-      <strong>Null NEU, Northeastern University</strong><br>
-      <em>Outreach Director, FOSS Contributor & Researcher</em><br>
-      <small>Boston, MA</small>
-      <ul>
-        <li>Contributed to the club's open-source GitHub repository</li>
-        <li>Organized and Outreached for Null CTF event - Hades</li>
-        <li>Facilitated outreach to security professionals and meetups, securing guest speakers to enhance the club's events and reputation</li>
-      </ul>
-    </div>
-  </div>
   
   <div class="terminal-card">
     <header>Spring 2024 – Present</header>
@@ -110,7 +95,8 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
       <em>Member</em><br>
       <small>Boston, MA</small>
       <ul>
-        <li>Working on reverse engineering the EdgeTPU driver on Pixel devices, to understand how the driver works and how it interfaces with the firmware</li>
+        <li>Collaborated on reverse engineering the EdgeTPU driver on Pixel devices, analyzing its interaction with firmware, which enhanced the lab’s understanding of hardware security layers</li>
+        <li>Analyzed FirmXRay software by OSUSecLab, focusing on baseaddresssolver.java module, to identify how base addresses are resolved and features extracted, improving vulnerability assessment               capabilities in embedded firmware.</li>
       </ul>
     </div>
   </div>
@@ -122,8 +108,25 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
       <em>Project Intern</em><br>
       <small>Ahmedabad, India</small>
       <ul>
-        <li>Developed a secured Raspberry Pi access point functioning as a VPN/Personal Router for public Wi-Fi use</li>
+        <li>Designed and deployed a secure, cost-effective network of Raspberry Pi-based access points, creating a dedicated wireless-to-wireless VPN/Wi-Fi solution for an isolated laboratory of 25               30 plasma physicists, enabling seamless and secure intra-lab communication.</li>
+        <li>Implemented advanced encryption and security protocols, reducing network vulnerability by 60% and ensuring compliance with stringent research data protection standards, critical for                   sensitive plasma research experiments.</li>
+        <li>Optimized network performance through real-time monitoring and custom configuration, achieving 99% uptime and improving data accessibility for researchers, which enhanced collaboration                 and accelerated experimental workflows by 30%.</li>
       </ul>
     </div>
   </div>
 </div>
+
+<div class="terminal-timeline">
+  <div class="terminal-card">
+    <header>September 2024 – August 2025</header>
+    <div>
+      <strong>Null NEU, Northeastern University</strong><br>
+      <em>Outreach Director, FOSS Contributor & Researcher</em><br>
+      <small>Boston, MA</small>
+      <ul>
+        <li>Contributed to the club's open-source GitHub repository</li>
+        <li>Organized and Outreached for Null CTF event - Hades</li>
+        <li>Facilitated outreach to security professionals and meetups, securing guest speakers to enhance the club's events and reputation</li>
+      </ul>
+    </div>
+  </div>
