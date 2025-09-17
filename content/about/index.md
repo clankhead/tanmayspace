@@ -46,7 +46,7 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
   <div class="terminal-card">
     <header>Certifications</header>
     <div>
-      <p><strong>Completed:</strong> NSE 1-8 certifications, Palo Alto fundamentals of network and cloud security</p>
+      <p><strong>Completed:</strong> CompTIA Security+,  AWS Academy Cloud Security Foundations</p>
       <p><strong>In Progress:</strong> PNPT (Practical Network Penetration Tester), HTB CBBH Certificate</p>
     </div>
   </div>
@@ -56,6 +56,7 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
     <div>
       <ul>
         <li>SimSpace Cyber Cup 2025 Top 6</li>
+        <li>Imaginary CTF - Rank 45 out of 1414</li>
         <li>Pwn.college white belt</li>
       </ul>
     </div>
