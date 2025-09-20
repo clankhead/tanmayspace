@@ -92,7 +92,7 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
 
 <div class="terminal-timeline">
   <div class="terminal-card">
-    <header>Spring 2024 – Present</header>
+    <header>Spring 2025 – August 2025</header>
     <div>
       <strong>CyberspACe securiTy and forensIcs lab (CactiLab)</strong><br>
       <em>Member</em><br>
