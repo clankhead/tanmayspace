@@ -9,8 +9,6 @@ tags: ["cybersecurity", "Active Direectory"]
 INCOMPLETE
 
 
-# Setting up a vulnerable AD lab
-
 note: if learning about the attacks on AD directory is the goal, check out: https://github.com/Orange-Cyberdefense/GOAD
 
 According to microsoft's website, Active Directory (AD) provides the methods for storing directory data and making this data available to network users and administrators.
