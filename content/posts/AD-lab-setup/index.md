@@ -1,3 +1,14 @@
+---
+title: "Building A Vulnerable Active Directory Lab"
+date: 2025-10-08
+read: "8 min read"
+tags: ["cybersecurity", "Active Direectory"]
+---
+
+[! WARNING]
+INCOMPLETE
+
+
 # Setting up a vulnerable AD lab
 
 note: if learning about the attacks on AD directory is the goal, check out: https://github.com/Orange-Cyberdefense/GOAD
