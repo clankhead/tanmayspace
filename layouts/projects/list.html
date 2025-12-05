@@ -1,21 +1,21 @@
 {{ define "main" }}
 <div class="projects-page-content">
-  <div class="file-system-view">
+  <div class="projects-file-system-view">
     {{ range .Pages }}
-      <div class="file-grid-cell">
-        <a href="{{ .RelPermalink }}" class="file-item" 
-           onmouseover="const popup = this.querySelector('.file-hover-info'); const rect = this.getBoundingClientRect(); popup.style.left = rect.left + 'px'; popup.style.top = (rect.bottom + 10) + 'px';">
-          <div class="file-icon">
-            <div class="folder-icon-graphic">
-              <div class="folder-tab"></div>
-              <div class="folder-body"></div>
+      <div class="projects-file-grid-cell">
+        <a href="{{ .RelPermalink }}" class="projects-file-item" 
+           onmouseover="const popup = this.querySelector('.projects-file-hover-info'); const rect = this.getBoundingClientRect(); popup.style.left = rect.left + 'px'; popup.style.top = (rect.bottom + 10) + 'px';">
+          <div class="projects-file-icon">
+            <div class="projects-folder-icon-graphic">
+              <div class="projects-folder-tab"></div>
+              <div class="projects-folder-body"></div>
             </div>
           </div>
-          <div class="file-label">
-            <span class="file-name">{{ .Title }}</span>
+          <div class="projects-file-label">
+            <span class="projects-file-name">{{ .Title }}</span>
           </div>
-          <div class="file-hover-info">
-            <div class="hover-content">
+          <div class="projects-file-hover-info">
+            <div class="projects-hover-content">
               {{ .Summary }}
               {{ if .Params.github }}
                 <p><span class="button">View on GitHub</span></p>
@@ -29,7 +29,7 @@
 </div>
 
 <style>
-/* Projects page wrapper */
+/* Projects page wrapper - Prefix all classes with 'projects-' to avoid conflicts */
 .projects-page-content {
   padding: 0;
   height: 100%;
@@ -38,7 +38,7 @@
   position: relative;
 }
 
-.file-system-view {
+.projects-file-system-view {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px 40px;
@@ -54,7 +54,7 @@
 }
 
 /* Grid cell wrapper */
-.file-grid-cell {
+.projects-file-grid-cell {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -62,7 +62,7 @@
 }
 
 /* File Item Container */
-.file-item {
+.projects-file-item {
   position: relative;
   display: inline-flex;
   flex-direction: column;
@@ -75,34 +75,34 @@
   color: inherit;
 }
 
-a.file-item {
+a.projects-file-item {
   text-decoration: none;
 }
 
-.file-item:hover {
+.projects-file-item:hover {
   background-color: transparent;
   text-decoration: none;
 }
 
-.file-item:active .file-icon {
+.projects-file-item:active .projects-file-icon {
   transform: translate(1px, 1px);
 }
 
 /* Folder Icon Graphic */
-.file-icon {
+.projects-file-icon {
   width: 64px;
   height: 56px;
   position: relative;
   margin-bottom: 4px;
 }
 
-.folder-icon-graphic {
+.projects-folder-icon-graphic {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.folder-tab {
+.projects-folder-tab {
   position: absolute;
   top: 0;
   left: 0;
@@ -117,7 +117,7 @@ a.file-item {
   z-index: 1;
 }
 
-.folder-body {
+.projects-folder-body {
   position: absolute;
   top: 6px;
   left: 0;
@@ -133,20 +133,20 @@ a.file-item {
 }
 
 /* Selected/Hover state for folder */
-.file-item:hover .folder-body,
-.file-item:hover .folder-tab {
+.projects-file-item:hover .projects-folder-body,
+.projects-file-item:hover .projects-folder-tab {
   background: var(--mac-gray);
 }
 
 /* File Label */
-.file-label {
+.projects-file-label {
   text-align: center;
   padding: 2px 4px;
   max-width: 90px;
   position: relative;
 }
 
-.file-name {
+.projects-file-name {
   font-size: 11px;
   font-family: Chicago, Monaco, "Courier New", monospace;
   color: var(--mac-black);
@@ -161,7 +161,7 @@ a.file-item {
 }
 
 /* Selected state */
-.file-item:hover .file-name {
+.projects-file-item:hover .projects-file-name {
   background: var(--mac-black);
   color: var(--mac-white);
   padding: 1px 3px;
@@ -170,7 +170,7 @@ a.file-item {
 }
 
 /* Hover Info Popup */
-.file-hover-info {
+.projects-file-hover-info {
   position: fixed;
   z-index: 10000;
   opacity: 0;
@@ -179,13 +179,13 @@ a.file-item {
   transition: none;
 }
 
-.file-item:hover .file-hover-info {
+.projects-file-item:hover .projects-file-hover-info {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
 
-.hover-content {
+.projects-hover-content {
   background: var(--mac-white);
   border: 2px solid var(--mac-black);
   padding: 12px;
@@ -200,11 +200,11 @@ a.file-item {
   position: relative;
 }
 
-.hover-content p {
+.projects-hover-content p {
   margin: 0.5em 0;
 }
 
-.hover-content .button {
+.projects-hover-content .button {
   margin-top: 8px;
   pointer-events: none;
   opacity: 0.7;
@@ -212,7 +212,7 @@ a.file-item {
 
 /* Grid Responsiveness */
 @media (max-width: 1024px) {
-  .file-system-view {
+  .projects-file-system-view {
     grid-template-columns: repeat(3, 1fr);
     gap: 25px 30px;
     padding: 15px;
@@ -220,41 +220,41 @@ a.file-item {
 }
 
 @media (max-width: 768px) {
-  .file-system-view {
+  .projects-file-system-view {
     grid-template-columns: repeat(2, 1fr);
     gap: 20px 25px;
     padding: 12px;
   }
   
-  .file-icon {
+  .projects-file-icon {
     width: 56px;
     height: 48px;
   }
   
-  .hover-content {
+  .projects-hover-content {
     min-width: 200px;
     max-width: 250px;
   }
 }
 
 @media (max-width: 480px) {
-  .file-system-view {
+  .projects-file-system-view {
     grid-template-columns: repeat(2, 1fr);
     gap: 15px 20px;
     padding: 10px;
   }
   
-  .file-icon {
+  .projects-file-icon {
     width: 48px;
     height: 42px;
   }
   
-  .file-name {
+  .projects-file-name {
     font-size: 10px;
   }
   
   /* On mobile, show info on tap instead of hover */
-  .file-item:active .file-hover-info {
+  .projects-file-item:active .projects-file-hover-info {
     opacity: 1;
     visibility: visible;
   }
