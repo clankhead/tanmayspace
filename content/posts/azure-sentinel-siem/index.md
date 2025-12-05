@@ -1,7 +1,7 @@
 ---
 title: "Building My First Cloud SIEM: And how you should too with Azure Sentinel"
+author: "Tanmay Sharma"
 date: 2024-11-05
-read: "8 min read"
 tags: ["cybersecurity", "siem", "azure", "sentinel", "cloud-security", "soc", "homelab"]
 ---
 
