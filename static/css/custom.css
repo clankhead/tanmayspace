@@ -1,0 +1,2015 @@
+/* ===================================
+   ROOT VARIABLES
+   =================================== */
+:root {
+    --global-font-size: 16px;
+    --page-width: 70em;
+    --mac-beige: #E5E5DC;
+    --mac-gray: #BFBFBF;
+    --mac-dark-gray: #999999;
+    --mac-black: #000000;
+    --mac-white: #FFFFFF;
+    --mac-highlight: #000080;
+    --desktop-pattern: #D4D0C8;
+    /* New smooth gradient colors */
+    --bezel-light: #F2F2EA;
+    --bezel-mid: #E5E5DC;
+    --bezel-dark: #D8D8CF;
+}
+
+/* ===================================
+   CUSTOM BEZEL TEXT INSTRUCTIONS
+   To add custom text to the bottom bezel:
+   Add data-bezel-text attribute to your HTML tag
+   Example: <html lang="en" data-bezel-text="TANMAYSPACE TERMINAL">
+   =================================== */
+
+/* ===================================
+   DESKTOP VIEWPORT - 3D BEZEL
+   Equal 65px bezel on all sides
+   =================================== */
+html {
+    background-color: var(--mac-beige); /* Beige background for bezel */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure full viewport height */
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    /* Create the thick bezel frame - equal on all sides */
+    padding: 65px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+body {
+    margin: 0; /* Reset margin */
+    padding: 0;
+    min-height: calc(100vh - 130px); /* Back to min-height for flexibility */
+    height: calc(100vh - 130px); /* Also set height */
+    max-height: calc(100vh - 130px); /* Prevent overflow */
+    position: relative;
+    background-color: #000000;
+    border: none;
+    box-shadow: none;
+    /* Ensure body fills the available space */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* Ensure content reaches bottom */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* CREATE THE 3D MONITOR BEZEL - Fixed for equal borders */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(ellipse at center, 
+        var(--mac-beige) 0%, 
+        var(--mac-beige) 40%, 
+        var(--bezel-dark) 70%,
+        #000000 90%);
+    border: 2px solid #000000;
+    box-sizing: border-box;
+    box-shadow: 
+        /* Outer drop shadows for depth */
+        0 0 40px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(0, 0, 0, 0.3),
+        0 8px 30px rgba(0, 0, 0, 0.4),
+        
+        /* OUTER EDGE - Thin dark lines on bottom & right (as per sketch) */
+        inset -10px 0 0 0 rgba(0, 0, 0, 0.2), /* right thin line */
+        inset 0 -10px 0 0 rgba(0, 0, 0, 0.2), /* bottom thin line */
+        
+        /* OUTER EDGE - Thin dark lines on top & left (as per sketch) */
+        inset 10px 0 0 0 var(--mac-white), /* left thin line */
+        inset 0 10px 0 0 var(--mac-white), /* top thin line */
+        
+        /* BEZEL WALLS - 3D effect with accent lines */
+        /* Dark accent lines (thicker) on inner edge bottom & right walls */
+        inset -65px 0 0 0 var(--mac-beige), /* right wall */
+        inset -62px 0 0 0 rgba(0, 0, 0, 0.15), /* right wall accent thick */
+        inset 0 -65px 0 0 var(--mac-beige), /* bottom wall */
+        inset 0 -62px 0 0 rgba(0, 0, 0, 0.15), /* bottom wall accent thick */
+        
+        /* Light accent lines (thicker) on inner edge top & left walls */
+        inset 65px 0 0 0 var(--mac-beige), /* left wall */
+        inset 62px 0 0 0 rgba(255, 255, 255, 0.6), /* left wall accent thick */
+        inset 0 65px 0 0 var(--mac-beige), /* top wall */
+        inset 0 62px 0 0 rgba(255, 255, 255, 0.6), /* top wall accent thick */
+        
+        /* Additional subtle shading for depth */
+        inset -64px -64px 0 0 rgba(0, 0, 0, 0.08), /* corner shadow */
+        inset 64px 64px 0 0 rgba(255, 255, 255, 0.3), /* corner highlight */
+        
+        /* Create the inner cutout for the screen */
+        inset 0 0 0 65px var(--mac-beige);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Add a second layer for the inner screen border */
+body::after {
+    content: "";
+    position: fixed;
+    top: 63px;
+    left: 63px;
+    right: 63px;
+    bottom: 63px;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+    box-shadow: 
+        0 0 10px rgba(0, 0, 0, 0.2),
+        inset 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Bottom bezel text area - customizable */
+/* To add custom text to the bottom bezel, add data-bezel-text attribute to <html> tag */
+/* Example: <html data-bezel-text="TANMAYSPACE TERMINAL"> */
+html::after {
+    content: attr(data-bezel-text);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Changed from center to flex-start */
+    padding-left: 80px; /* Add left padding to position text */
+    color: rgba(0, 0, 0, 0.5);
+    font-size: 13px;
+    font-family: Chicago, Monaco, "Courier New", monospace;
+    letter-spacing: 1px;
+    text-transform: none; /* Changed from uppercase to none */
+    z-index: 2;
+    pointer-events: none;
+    /* Embossed text effect */
+    text-shadow: 
+        1px 1px 0 rgba(255, 255, 255, 0.5),
+        -1px -1px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* Default text if no data attribute is set */
+html:not([data-bezel-text])::after {
+    content: "MIT License - Designed & developed by d3adp0et, powered by Hugo + Terminal CSS.";
+}
+
+/* Ambient light overlay for extra polish */
+html::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(
+        ellipse at top left,
+        rgba(255, 255, 255, 0.08) 0%,
+        transparent 40%
+    );
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Desktop area container with black screen */
+body.terminal {
+    background-color: var(--mac-black);
+    box-shadow: 
+        inset 0 0 0 20px var(--mac-black),
+        inset 0 0 30px 10px rgba(0, 0, 0, 0.3),
+        inset 0 0 5px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    overflow: hidden;
+    /* Body already has flex from base body style */
+    /* Heights are already set in body base style */
+}
+
+/* Main container becomes the desktop workspace */
+.container {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    width: 100%;
+    padding: 20px;
+    margin: 0;
+    background-color: var(--desktop-pattern);
+    background-image: 
+        linear-gradient(45deg, var(--mac-dark-gray) 25%, transparent 25%),
+        linear-gradient(-45deg, var(--mac-dark-gray) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, var(--mac-dark-gray) 75%),
+        linear-gradient(-45deg, transparent 75%, var(--mac-dark-gray) 75%);
+    background-size: 4px 4px;
+    background-position: 0 0, 0 2px, 2px -2px, -2px 0px;
+    border: none;
+    box-shadow: none;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    /* Ensure container expands properly */
+    flex: 1;
+    min-height: 0; /* Allow flex to work properly */
+}
+
+/* ===================================
+   NAVIGATION - MAC TASKBAR
+   =================================== */
+.terminal-nav {
+    margin: -20px -20px 0 -20px;
+    padding: 1px 20px;
+    background-color: var(--mac-white);
+    border-bottom: 2px solid var(--mac-black);
+    box-shadow: none;
+    position: relative;
+    z-index: 100;
+    border-radius: 8px 8px 0 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    max-width: 100%;
+    margin: 0;
+    gap: 30px; /* Equal spacing between all items */
+}
+
+/* Terminal prompt styling - keep blue */
+.terminal-prompt {
+    color: var(--primary-color);
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.terminal-prompt::before {
+    content: none;
+}
+
+/* Terminal prompt link */
+.terminal-prompt-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.terminal-prompt-link:hover {
+    background-color: var(--primary-color);
+    color: var(--invert-font-color);
+}
+
+/* Letter colors for tanmayspace */
+.terminal-prompt-link .t-letter { color: #4CAF50; }
+.terminal-prompt-link .a1-letter { color: #8BC34A; }
+.terminal-prompt-link .n-letter { color: #FFEB3B; }
+.terminal-prompt-link .m-letter { color: #FF9800; }
+.terminal-prompt-link .a2-letter { color: #F44336; }
+.terminal-prompt-link .y-letter { color: #3F51B5; }
+.terminal-prompt-link .s-letter { color: #00BCD4; }
+.terminal-prompt-link .p-letter { color: #4CAF50; }
+.terminal-prompt-link .a3-letter { color: #CDDC39; }
+.terminal-prompt-link .c-letter { color: #FF9800; }
+.terminal-prompt-link .e-letter { color: #F44336; }
+
+/* Ensure hover state overrides letter colors */
+.terminal-prompt-link:hover span {
+    color: var(--invert-font-color) !important;
+}
+
+/* Navigation items - black text as requested */
+.nav-item {
+    text-decoration: none;
+    color: var(--mac-black);
+    padding: 2px 8px;
+}
+
+.nav-item:hover {
+    color: var(--invert-font-color);
+    background-color: var(--mac-black);
+    text-decoration: none;
+}
+
+.nav-item.active {
+    color: var(--invert-font-color);
+    background-color: var(--mac-black);
+    padding: 2px 8px;
+    text-decoration: none;
+}
+
+.nav-item:active {
+    transform: translate(1px, 1px);
+}
+
+/* Override Terminal CSS nav defaults */
+nav {
+    display: block !important;
+}
+
+.terminal-nav ul,
+.terminal-nav li,
+.terminal-nav .terminal-menu {
+    display: none !important;
+}
+
+/* ===================================
+   MAIN CONTENT - MAC WINDOW
+   =================================== */
+main {
+    max-width: min(calc(100% - 40px), var(--page-width));
+    margin: 15px auto 1px;
+    background-color: var(--mac-beige);
+    border: 2px solid var(--mac-black);
+    box-shadow: 
+        /* Window shadow */
+        4px 4px 0 rgba(0, 0, 0, 0.5),
+        /* Window bezel */
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    /* Ensure main expands */
+    min-height: 0;
+}
+
+/* Mac window title bar */
+.window-titlebar {
+    background: linear-gradient(to bottom, 
+        #FFFFFF 0%, 
+        #F5F5F5 20%,
+        #E8E8E8 50%,
+        #D8D8D8 80%,
+        var(--mac-gray) 100%);
+    border: 2px solid var(--mac-black);
+    border-bottom: 1px solid var(--mac-black);
+    padding: 12px 0;
+    position: relative;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    margin: -2px -2px 0 -2px;
+    width: calc(100% + 4px);
+    border-radius: 0;
+}
+
+/* Title bar text */
+.window-title {
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--mac-black);
+    z-index: 3;
+    position: relative;
+    padding: 0 30px;
+    background: linear-gradient(to bottom, 
+        #FFFFFF 0%, 
+        #F5F5F5 20%,
+        #E8E8E8 50%,
+        #D8D8D8 80%,
+        var(--mac-gray) 100%);
+}
+
+/* Window close box (left) */
+.window-close-box {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 11px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, 
+        #FFFFFF 0%, 
+        #F0F0F0 50%, 
+        #E0E0E0 100%);
+    box-shadow: 
+        inset -1px -1px 1px rgba(0, 0, 0, 0.1),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.8),
+        0 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 4;
+}
+
+/* Window zoom box (right) */
+.window-zoom-box {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 11px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    background: linear-gradient(135deg, 
+        #FFFFFF 0%, 
+        #F0F0F0 50%, 
+        #E0E0E0 100%);
+    box-shadow: 
+        inset -1px -1px 1px rgba(0, 0, 0, 0.1),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.8),
+        0 1px 1px rgba(0, 0, 0, 0.1);
+    z-index: 4;
+}
+
+.window-zoom-box::before,
+.window-zoom-box::after {
+    content: "";
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.window-zoom-box::before {
+    width: 5px;
+    height: 1px;
+    top: 5px;
+    left: 3px;
+}
+
+.window-zoom-box::after {
+    width: 1px;
+    height: 5px;
+    top: 3px;
+    left: 5px;
+}
+
+/* Title bar horizontal stripes */
+.window-stripes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.window-stripes::before,
+.window-stripes::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 12px;
+    width: calc(50% - 80px);
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.15) 0,
+        rgba(0, 0, 0, 0.15) 2px,
+        transparent 2px,
+        transparent 4px,
+        rgba(0, 0, 0, 0.15) 4px,
+        rgba(0, 0, 0, 0.15) 6px,
+        transparent 6px,
+        transparent 8px,
+        rgba(0, 0, 0, 0.15) 8px,
+        rgba(0, 0, 0, 0.15) 10px,
+        transparent 10px
+    );
+}
+
+.window-stripes::before {
+    left: 30px;
+}
+
+.window-stripes::after {
+    right: 30px;
+}
+
+/* Content area inside window */
+.window-content {
+    padding: 20px 30px;
+    background-color: var(--mac-white);
+    flex: 1;
+    overflow-y: auto;
+}
+
+/* ===================================
+   TYPOGRAPHY
+   =================================== */
+h1 {
+    font-size: 1.4em;
+    margin: 0 0 1.5em;
+    padding: 6px 0;
+    background: linear-gradient(to bottom, 
+        #FFFFFF 0%, 
+        #F5F5F5 20%,
+        #E8E8E8 50%,
+        #D8D8D8 80%,
+        var(--mac-gray) 100%);
+    border: 1px solid var(--mac-black);
+    text-align: center;
+    position: relative;
+    font-weight: bold;
+    box-shadow: 
+        0 1px 3px rgba(0, 0, 0, 0.15),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Title bar close box for h1 */
+h1::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 11px;
+    height: 11px;
+    border: 1px solid var(--mac-black);
+    background: linear-gradient(135deg, 
+        #FFFFFF 0%, 
+        #F0F0F0 50%, 
+        #E0E0E0 100%);
+    box-shadow: 
+        inset -1px -1px 1px rgba(0, 0, 0, 0.2),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.8),
+        0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Pinstripes for h1 */
+h1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 25px;
+    right: 25px;
+    height: 1px;
+    transform: translateY(-0.5px);
+    background: repeating-linear-gradient(
+        to right,
+        transparent 0,
+        transparent 1px,
+        var(--mac-black) 1px,
+        var(--mac-black) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+    opacity: 0.3;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 3em 0 2em;
+    font-weight: bold;
+    padding: 8px;
+    background-color: var(--mac-gray);
+    border: 1px solid var(--mac-black);
+    box-shadow: 
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white);
+}
+
+p {
+    line-height: 1.6;
+    margin: 1em 0;
+}
+
+/* ===================================
+   HOMEPAGE CONTENT
+   =================================== */
+.homepage-content {
+    padding: 0;
+}
+
+.post-entry {
+    position: relative;
+    padding-left: 150px;
+    margin-bottom: 3em;
+    background-color: var(--mac-white);
+    border: 1px solid var(--mac-black);
+    padding: 15px 15px 15px 165px;
+    box-shadow: 
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white),
+        2px 2px 0 var(--mac-black);
+}
+
+.post-entry .date {
+    position: absolute;
+    left: 15px;
+    width: 140px;
+    font-family: Chicago, Monaco, "Courier New", monospace;
+}
+
+.post-header {
+    margin-bottom: 0.5em;
+}
+
+.post-summary {
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ===================================
+   LINKS
+   =================================== */
+a {
+    color: var(--primary-color);
+}
+
+.more-link,
+.post-title {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.more-link:hover,
+.post-title:hover {
+    text-decoration: underline;
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+/* ===================================
+   BUTTONS
+   =================================== */
+a.button,
+.terminal-button {
+    display: inline-block;
+    padding: 4px 12px;
+    background-color: var(--mac-beige);
+    border: 2px solid var(--mac-black);
+    border-radius: 0;
+    box-shadow: 
+        inset -2px -2px 0 var(--mac-dark-gray),
+        inset 2px 2px 0 var(--mac-white),
+        1px 1px 0 var(--mac-black);
+    text-decoration: none;
+    color: var(--mac-black);
+}
+
+a.button:active,
+.terminal-button:active {
+    box-shadow: 
+        inset 2px 2px 0 var(--mac-dark-gray),
+        inset -2px -2px 0 var(--mac-white);
+    transform: translate(1px, 1px);
+}
+
+/* ===================================
+   TERMINAL CARDS
+   =================================== */
+.terminal-card {
+
+    margin-bottom: 1.5em;
+    background-color: var(--mac-white);
+    border: 2px solid var(--mac-black);
+    box-shadow: 
+        inset -2px -2px 0 var(--mac-dark-gray),
+        inset 2px 2px 0 var(--mac-white),
+        3px 3px 0 var(--mac-black);
+    border-radius: 0;
+}
+
+.terminal-card header {
+    background: linear-gradient(to bottom, 
+        #FFFFFF 0%, 
+        #F5F5F5 20%,
+        #E8E8E8 50%,
+        #D8D8D8 80%,
+        var(--mac-gray) 100%);
+    border-bottom: 2px solid var(--mac-black);
+    padding: 8px 12px;
+    font-weight: bold;
+    position: relative;
+    box-shadow: 
+        0 1px 2px rgba(0, 0, 0, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    color: var(--mac-black);
+}
+
+/* Classic Mac close box */
+.terminal-card header::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 12px;
+    height: 12px;
+    border: 1px solid var(--mac-black);
+    background: linear-gradient(135deg, 
+        #FFFFFF 0%, 
+        #F0F0F0 50%, 
+        #E0E0E0 100%);
+    box-shadow: 
+        inset -1px -1px 1px rgba(0, 0, 0, 0.2),
+        inset 1px 1px 0 rgba(255, 255, 255, 0.8),
+        0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.terminal-card > div {
+    padding: 12px;
+}
+
+/* Skills grid */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5em;
+    margin-bottom: 3em;
+}
+
+/* Certifications */
+.certifications-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5em;
+    margin-bottom: 3em;
+}
+
+.certifications-section .terminal-card {
+    margin-bottom: 0;
+}
+
+/* About page specific */
+.about-page .terminal-timeline {
+    margin-top: 2em;
+}
+
+.about-page .terminal-timeline .terminal-card {
+    margin-bottom: 2em;
+}
+
+.terminal-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+/* ===================================
+   PHOTO GRID
+   =================================== */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 1.5em;
+    padding: 15px;
+    background-color: var(--mac-white);
+    border: 2px solid var(--mac-black);
+    box-shadow: 
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white);
+}
+
+.photo-frame {
+    background-color: var(--mac-white);
+    padding: 8px;
+    border: 2px solid var(--mac-black);
+    box-shadow: 
+        2px 2px 0 var(--mac-black),
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white);
+}
+
+.photo-grid img,
+.photo-frame img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    object-fit: cover;
+    border: 1px solid var(--mac-dark-gray);
+    display: block;
+}
+
+/* ===================================
+   POSTS & LISTS
+   =================================== */
+.posts-list {
+    background-color: var(--mac-white);
+    border: 2px solid var(--mac-black);
+    padding: 20px;
+    box-shadow: 
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white);
+}
+
+.post-list-item {
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    background-color: var(--mac-white);
+    border: 1px solid var(--mac-gray);
+    box-shadow: 
+        1px 1px 0 var(--mac-dark-gray);
+}
+
+.post-list-item:hover {
+    background-color: var(--mac-beige);
+    box-shadow: 
+        inset 1px 1px 0 var(--mac-dark-gray);
+}
+
+.post-date {
+    color: var(--mac-black);
+    font-weight: bold;
+}
+
+.separator {
+    margin: 0 10px;
+    color: var(--mac-dark-gray);
+}
+
+.post-link {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.post-link:hover {
+    text-decoration: underline;
+}
+
+
+
+/* ===================================
+   FILE SYSTEM VIEW - POSTS PAGE
+   =================================== */
+
+/* Override the window-content for posts page */
+main:has(.file-system-header) .window-content {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* File system header */
+.file-system-header {
+    display: grid;
+    grid-template-columns: 40px 2fr 100px 120px 140px;  /* Adjusted proportions */
+    background: linear-gradient(to bottom, 
+        #FFFFFF 0%, 
+        #F5F5F5 20%,
+        #E8E8E8 50%,
+        #D8D8D8 80%,
+        var(--mac-gray) 100%);
+    border-bottom: 2px solid var(--mac-black);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    font-family: Chicago, Monaco, "Courier New", monospace;
+}
+
+.header-cell {
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 13px;
+    color: var(--mac-black);
+    border-right: 1px solid var(--mac-dark-gray);
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-cell:last-child {
+    border-right: none;
+}
+
+/* Column headers with sort indicators */
+.header-cell:not(:first-child)::after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid var(--mac-dark-gray);
+    opacity: 0.5;
+}
+
+/* Remove padding from name header since we have icon column now */
+.name-header {
+    padding-left: 10px;
+}
+
+/* File system items container */
+.file-system-items {
+    flex: 1;
+    overflow-y: auto;
+    background-color: var(--mac-white);
+    font-family: Chicago, Monaco, "Courier New", monospace;
+}
+
+/* Individual file item */
+.file-item {
+    display: grid;
+    grid-template-columns: 40px 2fr 100px 120px 140px;  /* Match header */
+    padding: 4px 0;
+    border-bottom: 1px solid var(--mac-beige);
+    text-decoration: none;
+    color: var(--mac-black);
+    position: relative;
+    align-items: center;
+    min-height: 36px;
+}
+
+.file-item:hover {
+    background-color: var(--mac-black);
+    color: var(--mac-white);
+}
+
+.file-item:hover .file-icon,
+.file-item:hover .file-name,
+.file-item:hover .file-size,
+.file-item:hover .file-type,
+.file-item:hover .file-date {
+    color: var(--mac-white);
+}
+
+.file-item:active {
+    background-color: var(--mac-black);
+}
+
+/* File icon column */
+.file-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 8px;
+}
+
+/* Small document icon for list view */
+.doc-icon-small {
+    width: 24px;
+    height: 28px;
+    background: var(--mac-white);
+    border: 1px solid var(--mac-black);
+    position: relative;
+    box-shadow: 
+        1px 1px 0 var(--mac-dark-gray);
+}
+
+.doc-icon-small::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: -1px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 6px 6px;
+    border-color: transparent transparent var(--mac-black) transparent;
+}
+
+.doc-icon-small::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0 5px 5px;
+    border-color: transparent transparent var(--mac-gray) transparent;
+}
+
+.doc-lines-small {
+    position: absolute;
+    top: 10px;
+    left: 3px;
+    right: 3px;
+}
+
+.doc-lines-small span {
+    display: block;
+    height: 1px;
+    background: var(--mac-black);
+    margin-bottom: 2px;
+}
+
+/* When item is hovered, change icon colors */
+.file-item:hover .doc-icon-small {
+    background: var(--mac-black);
+    border-color: var(--mac-white);
+}
+
+.file-item:hover .doc-icon-small::before {
+    border-color: transparent transparent var(--mac-white) transparent;
+}
+
+.file-item:hover .doc-icon-small::after {
+    border-color: transparent transparent var(--mac-black) transparent;
+}
+
+.file-item:hover .doc-lines-small span {
+    background: var(--mac-white);
+}
+
+/* File details columns */
+.file-name {
+    padding: 0 10px;
+    font-weight: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.file-size,
+.file-type,
+.file-date {
+    padding: 0 10px;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* Alternate row coloring (subtle) */
+.file-item:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.file-item:hover:nth-child(even) {
+    background-color: var(--mac-black);
+}
+
+/* Custom scrollbar for file list */
+.file-system-items::-webkit-scrollbar {
+    width: 16px;
+}
+
+.file-system-items::-webkit-scrollbar-track {
+    background-color: var(--mac-beige);
+    border-left: 1px solid var(--mac-black);
+}
+
+.file-system-items::-webkit-scrollbar-thumb {
+    background-color: var(--mac-beige);
+    border: 1px solid var(--mac-black);
+    box-shadow: 
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white);
+}
+
+.folder-icon-list {
+    width: 28px;
+    height: 22px;
+    background: var(--mac-beige);
+    border: 1px solid var(--mac-black);
+    position: relative;
+    border-radius: 0 2px 0 0;
+    box-shadow: 
+        1px 1px 0 var(--mac-dark-gray);
+}
+
+.folder-icon-list::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 12px;
+    height: 4px;
+    background: var(--mac-beige);
+    border: 1px solid var(--mac-black);
+    border-bottom: none;
+    border-radius: 2px 2px 0 0;
+}
+
+/* Hover state for folder */
+.file-item:hover .folder-icon-list,
+.file-item:hover .folder-icon-list::before {
+    background: var(--mac-black);
+    border-color: var(--mac-white);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .file-system-header,
+    .file-item {
+        grid-template-columns: 36px 2fr 120px 120px;
+    }
+    
+    .size-header,
+    .file-size {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .file-system-header,
+    .file-item {
+        grid-template-columns: 36px 1fr 100px;
+    }
+    
+    .type-header,
+    .file-type {
+        display: none;
+    }
+    
+    .file-system-items {
+        max-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .file-system-header,
+    .file-item {
+        grid-template-columns: 32px 1fr;
+    }
+    
+    .date-header,
+    .file-date {
+        display: none;
+    }
+    
+    .file-name {
+        font-size: 12px;
+    }
+    
+    .doc-icon-small {
+        width: 20px;
+        height: 24px;
+    }
+}
+
+
+
+/* ===================================
+   SCROLLBAR STYLING - CLASSIC MAC
+   =================================== */
+/* Webkit browsers */
+::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--mac-beige);
+    border: 1px solid var(--mac-black);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--mac-beige);
+    border: 1px solid var(--mac-black);
+    box-shadow: 
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white);
+}
+
+::-webkit-scrollbar-button {
+    background-color: var(--mac-beige);
+    border: 1px solid var(--mac-black);
+    box-shadow: 
+        inset -1px -1px 0 var(--mac-dark-gray),
+        inset 1px 1px 0 var(--mac-white);
+    height: 16px;
+}
+
+::-webkit-scrollbar-button:active {
+    box-shadow: 
+        inset 1px 1px 0 var(--mac-dark-gray),
+        inset -1px -1px 0 var(--mac-white);
+}
+
+/* ===================================
+   FORMS & INPUTS
+   =================================== */
+input[type="text"],
+input[type="email"],
+textarea,
+select {
+    background-color: var(--mac-white);
+    border: 2px solid var(--mac-black);
+    box-shadow: 
+        inset 2px 2px 0 var(--mac-dark-gray),
+        inset -1px -1px 0 var(--mac-white);
+    padding: 4px 8px;
+    font-family: inherit;
+}
+
+/* ===================================
+   CODE BLOCKS
+   =================================== */
+pre, code {
+    background-color: var(--mac-white);
+    border: 1px solid var(--mac-black);
+    box-shadow: 
+        inset 1px 1px 0 var(--mac-dark-gray);
+}
+
+/* ===================================
+   TABLES
+   =================================== */
+table {
+    background-color: var(--mac-white);
+    border: 2px solid var(--mac-black);
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+th {
+    background: linear-gradient(to bottom, var(--mac-white) 0%, var(--mac-gray) 100%);
+    border: 1px solid var(--mac-black);
+    padding: 4px 8px;
+}
+
+td {
+    border: 1px solid var(--mac-gray);
+    padding: 4px 8px;
+}
+
+/* ===================================
+   ARTICLE PAGES
+   =================================== */
+article {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.post-meta {
+    margin: -1em 0 2em;
+    font-size: 0.9em;
+    color: var(--mac-dark-gray);
+}
+
+/* ===================================
+   CLASSIC MAC ALERT/DIALOG STYLES
+   =================================== */
+.alert,
+.notice {
+    background-color: var(--mac-white);
+    border: 3px solid var(--mac-black);
+    border-radius: 0;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 
+        4px 4px 0 var(--mac-black),
+        inset -2px -2px 0 var(--mac-dark-gray),
+        inset 2px 2px 0 var(--mac-white);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+@media (max-width: 1024px) {
+    html {
+        padding: 30px;
+    }
+    
+    body {
+        min-height: calc(100vh - 60px);
+    }
+    
+    body::before {
+        background: linear-gradient(135deg, 
+            #F2F2EA 0%, 
+            var(--mac-beige) 45%, 
+            #D8D8CF 100%);
+        box-shadow: 
+            0 0 25px rgba(0, 0, 0, 0.4),
+            0 5px 20px rgba(0, 0, 0, 0.3),
+            
+            /* Reduced but still smooth steps */
+            inset -1px -1px 1px #D5D5CC,
+            inset -2px -2px 2px #CACAC1,
+            inset -3px -3px 2px #BFBFB6,
+            inset -4px -4px 3px #B4B4AB,
+            inset -5px -5px 3px #A9A9A0,
+            inset -6px -6px 4px #9E9E95,
+            inset -7px -7px 4px #93938A,
+            inset -8px -8px 5px #88887F,
+            
+            inset 1px 1px 1px rgba(255, 255, 255, 0.9),
+            inset 2px 2px 2px rgba(250, 250, 250, 0.7),
+            inset 3px 3px 2px rgba(245, 245, 245, 0.5),
+            inset 4px 4px 3px rgba(240, 240, 240, 0.4),
+            inset 5px 5px 3px rgba(235, 235, 235, 0.3),
+            inset 6px 6px 4px rgba(230, 230, 230, 0.2),
+            
+            inset 0 0 15px rgba(255, 255, 255, 0.1),
+            inset 0 0 0 30px var(--mac-beige);
+    }
+    
+    body::after {
+        top: 27px;
+        left: 27px;
+        right: 27px;
+        bottom: 27px;
+    }
+    
+    body.terminal {
+        box-shadow: 
+            inset 0 0 0 15px var(--mac-black),
+            inset 0 0 20px 8px rgba(0, 0, 0, 0.25),
+            inset 0 0 4px rgba(0, 0, 0, 0.4);
+        padding: 15px;
+    }
+    
+    .container {
+        min-height: 0; /* Let flex handle it */
+        border-radius: 15px;
+    }
+    
+    body.terminal {
+        min-height: calc(100vh - 60px);
+    }
+    
+    html::after {
+        height: 30px;
+        font-size: 11px;
+        padding-left: 40px;
+        text-shadow: 
+            0.5px 0.5px 0 rgba(255, 255, 255, 0.4),
+            -0.5px -0.5px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    .terminal-nav {
+        margin: -15px -15px 0 -15px;
+        padding: 1px 15px;
+        border-radius: 6px 6px 0 0;
+    }
+    
+    main {
+        max-width: calc(100% - 30px);
+        margin: 12px auto 1px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .certifications-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        padding: 20px;
+    }
+    
+    body {
+        min-height: calc(100vh - 40px);
+    }
+    
+    body::before {
+        border: 1px solid #000000;
+        background: linear-gradient(135deg, 
+            #EFEFE7 0%, 
+            var(--mac-beige) 50%, 
+            #DCDCD3 100%);
+        box-shadow: 
+            0 0 20px rgba(0, 0, 0, 0.3),
+            0 3px 15px rgba(0, 0, 0, 0.2),
+            
+            /* Fewer steps for mobile */
+            inset -1px -1px 1px #D0D0C7,
+            inset -2px -2px 2px #C0C0B7,
+            inset -3px -3px 2px #B0B0A7,
+            inset -4px -4px 3px #A0A097,
+            inset -5px -5px 3px #909087,
+            
+            inset 1px 1px 1px rgba(255, 255, 255, 0.8),
+            inset 2px 2px 2px rgba(245, 245, 245, 0.5),
+            inset 3px 3px 2px rgba(235, 235, 235, 0.3),
+            inset 4px 4px 3px rgba(225, 225, 225, 0.2),
+            
+            inset 0 0 10px rgba(255, 255, 255, 0.05),
+            inset 0 0 0 20px var(--mac-beige);
+    }
+    
+    body::after {
+        top: 17px;
+        left: 17px;
+        right: 17px;
+        bottom: 17px;
+        border-radius: 1px;
+        box-shadow: 
+            0 0 5px rgba(0, 0, 0, 0.15),
+            inset 0 0 5px rgba(0, 0, 0, 0.05);
+    }
+    
+    body.terminal {
+        box-shadow: 
+            inset 0 0 0 10px var(--mac-black),
+            inset 0 0 15px 6px rgba(0, 0, 0, 0.2),
+            inset 0 0 3px rgba(0, 0, 0, 0.3);
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 10px;
+        min-height: 0; /* Let flex handle it */
+        border-radius: 10px;
+    }
+    
+    body.terminal {
+        min-height: calc(100vh - 40px);
+    }
+    
+    html::after {
+        height: 20px;
+        font-size: 10px;
+        padding-left: 25px;
+        text-shadow: 
+            0.5px 0.5px 0 rgba(255, 255, 255, 0.4),
+            -0.5px -0.5px 0 rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Navigation */
+    .terminal-nav {
+        margin: -10px -10px 0 -10px;
+        padding: 1px 15px;
+        border-radius: 5px 5px 0 0;
+    }
+    
+    .nav-wrapper {
+    flex-wrap: wrap;
+    gap: 15px;
+    }
+
+    .terminal-prompt-link {
+        margin-bottom: 0.5em;
+    }
+
+    .nav-item {
+        margin-right: 0;
+    }
+    
+    /* Main window */
+    main {
+        margin: 8px auto 1px;
+        max-width: calc(100% - 20px);
+    }
+    
+    .window-content {
+        padding: 15px;
+    }
+    
+    /* Grids */
+    .skills-grid,
+    .certifications-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    /* Posts */
+    .post-entry {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .post-entry .date {
+        position: static;
+        display: block;
+        margin-bottom: 0.5em;
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    html {
+        padding: 10px;
+    }
+    
+    body {
+        min-height: calc(100vh - 20px);
+    }
+    
+    body::before {
+        border: 1px solid rgba(0, 0, 0, 0.8);
+        background: var(--mac-beige);
+        box-shadow: 
+            0 0 15px rgba(0, 0, 0, 0.25),
+            
+            /* Minimal 3D for small screens */
+            inset -1px -1px 1px #C5C5BC,
+            inset -2px -2px 1px #B0B0A7,
+            inset -3px -3px 2px #9B9B92,
+            
+            inset 1px 1px 1px rgba(255, 255, 255, 0.7),
+            inset 2px 2px 1px rgba(240, 240, 240, 0.4),
+            inset 3px 3px 2px rgba(230, 230, 230, 0.2),
+            
+            inset 0 0 0 10px var(--mac-beige);
+    }
+    
+    body::after {
+        top: 7px;
+        left: 7px;
+        right: 7px;
+        bottom: 7px;
+        border: none;
+        box-shadow: 
+            0 0 3px rgba(0, 0, 0, 0.1),
+            inset 0 0 3px rgba(0, 0, 0, 0.05);
+    }
+    
+    body.terminal {
+        box-shadow: 
+            inset 0 0 0 8px var(--mac-black),
+            inset 0 0 10px 4px rgba(0, 0, 0, 0.15);
+        padding: 8px;
+    }
+    
+    .container {
+        padding: 8px;
+        min-height: 0; /* Let flex handle it */
+        border-radius: 8px;
+    }
+    
+    body.terminal {
+        min-height: calc(100vh - 20px);
+    }
+    
+    html::after {
+        height: 10px;
+        font-size: 9px;
+        padding-left: 15px;
+        letter-spacing: 0;
+        text-shadow: none; /* Too small for shadow effect */
+    }
+    
+    .terminal-nav {
+        margin: -8px -8px 0 -8px;
+        padding: 1px 10px;
+        border-radius: 3px 3px 0 0;
+    }
+    
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 10px;
+    }
+    
+    main {
+        margin: 8px auto 1px;
+        max-width: calc(100% - 10px);
+    }
+    
+    .window-content {
+        padding: 10px;
+    }
+}
+
+/* ===================================
+   GLOBAL OVERRIDES
+   =================================== */
+
+/* Remove rounded corners for authentic Mac look (except where specified) */
+*:not(.container):not(.terminal-nav) {
+    border-radius: 0 !important;
+}
+
+/* Ensure all text has proper contrast */
+body, p, li, td, th {
+    color: var(--mac-black);
+}
+
+/* Links should maintain their blue color */
+a {
+    color: var(--primary-color);
+}
+
+/* Reset any Terminal CSS background colors that might interfere */
+.terminal {
+    background-color: transparent !important;
+}
+
+.terminal-menu {
+    background-color: transparent;
+}
+
+/* Ensure lists have proper styling */
+ul, ol {
+    padding-left: 2em;
+}
+
+li {
+    margin: 0.25em 0;
+}
+
+/* Strong text should be bold */
+strong {
+    font-weight: bold;
+}
+
+/* ===================================
+   ANIMATION POLISH
+   =================================== */
+/* No hover transitions for authentic feel */
+* {
+    transition: none !important;
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+    html {
+        background: white;
+    }
+    
+    body {
+        box-shadow: none;
+        padding: 0;
+        background: white;
+        border: none;
+        margin: 0;
+    }
+    
+    .container {
+        padding: 0;
+        min-height: auto;
+        background: white;
+    }
+    
+    .terminal-nav {
+    display: none;
+    }
+    
+    main {
+        box-shadow: none;
+        border: 1px solid black;
+        margin: 0;
+        max-width: 100%;
+    }
+}
+
+/* ===================================
+   MAC SIDEBAR ICONS
+   =================================== */
+.container {
+  position: relative;
+}
+
+.mac-sidebar {
+  position: absolute;
+  right: 20px;
+  top: 54px; /* 46 for proper alignment*/
+  bottom: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+/* Base icon style */
+.mac-icon {
+  width: 64px;
+  height: 64px;
+  position: relative;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.mac-icon:hover {
+  transform: translateY(-2px);
+}
+
+.mac-icon:active {
+  transform: translateY(0);
+}
+
+/* Icon label */
+.icon-label {
+  text-align: center;
+  color: var(--mac-black);
+  background: transparent;
+  padding: 2px 4px;
+  margin-top: 1px;
+  font-size: 13px;
+  font-family: Chicago, Monaco, "Courier New", monospace;
+  white-space: nowrap;
+}
+
+.mac-icon:hover .icon-label {
+  background: var(--mac-black);
+  color: var(--mac-white);
+  border: 1px dotted var(--mac-white);
+}
+
+/* Document/Resume Icon */
+.doc-icon {
+  width: 48px;
+  height: 56px;
+  background: var(--mac-white);
+  border: 2px solid var(--mac-black);
+  position: relative;
+  margin: 0 auto 8px;
+  box-shadow: 
+    2px 2px 0 var(--mac-dark-gray),
+    3px 3px 0 var(--mac-black);
+}
+
+.doc-icon::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 12px 12px;
+  border-color: transparent transparent var(--mac-black) transparent;
+}
+
+.doc-icon::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 10px 10px;
+  border-color: transparent transparent var(--mac-gray) transparent;
+}
+
+.doc-lines {
+  position: absolute;
+  top: 20px;
+  left: 6px;
+  right: 6px;
+}
+
+.doc-lines span {
+  display: block;
+  height: 2px;
+  background: var(--mac-black);
+  margin-bottom: 4px;
+}
+
+.mac-icon:has(.doc-icon) .icon-label {
+  margin-top: -5px; /* Negative margin to bring label closer */
+}
+
+/* GitHub Icon - Terminal Style */
+.github-icon {
+  width: 56px;
+  height: 48px;
+  background: #000;
+  border: 2px solid #c0c0c0;
+  position: relative;
+  margin: 8px auto;
+  box-shadow: 
+    2px 2px 0 #808080,
+    3px 3px 0 #000;
+}
+
+.github-icon::before {
+  content: '>';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  color: #00ff00;
+  font-family: monospace;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.github-icon::after {
+  content: '_';
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  color: #00ff00;
+  font-family: monospace;
+  font-size: 16px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.mac-icon:has(.github-icon) .icon-label {
+  margin-top: -5px; /* Negative margin to bring label closer */
+}
+
+/* Mail Icon - Fixed with downward arrow */
+.mail-icon {
+  width: 56px;
+  height: 40px;
+  background: var(--mac-white);
+  border: 2px solid var(--mac-black);
+  position: relative;
+  margin: 12px auto;
+  box-shadow: 
+    2px 2px 0 var(--mac-dark-gray),
+    3px 3px 0 var(--mac-black);
+}
+
+.mail-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;  /* Moved to bottom */
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 16px 26px 0 26px;  /* Flipped the values */
+  border-color: var(--mac-black) transparent transparent transparent;  /* Color on top now */
+}
+
+.mail-icon::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;  /* Moved to bottom */
+  left: 2px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 14px 24px 0 24px;  /* Flipped the values */
+  border-color: var(--mac-white) transparent transparent transparent;  /* Color on top now */
+}
+
+.mac-icon:has(.mail-icon) .icon-label {
+  margin-top: -8px; /* Negative margin to bring label closer */
+}
+
+/* LinkedIn Icon - Just "in" Text */
+.linkedin-icon {
+  width: 56px;
+  height: 56px;
+  position: relative;
+  margin: 4px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+.linkedin-icon::before {
+  content: 'in';
+  font-family: Arial, sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  color: #0077B5; /* LinkedIn blue */
+  line-height: 1;
+  text-shadow: 
+    1px 1px 0 var(--mac-black),
+    2px 2px 0 var(--mac-dark-gray);
+}
+
+/* Special case for LinkedIn icon label spacing */
+.mac-icon:has(.linkedin-icon) .icon-label {
+  margin-top: -15px; /* Negative margin to bring label closer */
+}
+
+/* Trash Icon - Classic Mac Style */
+.trash-icon {
+  width: 48px;
+  height: 52px;
+  position: relative;
+  margin: 6px auto;
+}
+
+/* Position trash icon at bottom using margin */
+.mac-icon:has(.trash-icon) {
+  margin-top: auto; /* This pushes it to the bottom */
+
+}
+
+/* Trash can body */
+.trash-icon::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  right: 4px;
+  height: 40px;
+  background: var(--mac-white);
+  border: 2px solid var(--mac-black);
+  border-bottom-width: 3px;
+  box-shadow: 
+    2px 2px 0 var(--mac-dark-gray),
+    3px 3px 0 var(--mac-black);
+}
+
+/* Trash can lid */
+.trash-icon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 12px;
+  background: var(--mac-gray);
+  border: 2px solid var(--mac-black);
+  box-shadow: 
+    2px 2px 0 var(--mac-dark-gray);
+}
+
+/* Vertical lines on trash can */
+.trash-icon {
+  background-image: 
+    linear-gradient(90deg, transparent 14px, var(--mac-black) 14px, var(--mac-black) 16px, transparent 16px),
+    linear-gradient(90deg, transparent 24px, var(--mac-black) 24px, var(--mac-black) 26px, transparent 26px),
+    linear-gradient(90deg, transparent 34px, var(--mac-black) 34px, var(--mac-black) 36px, transparent 36px);
+  background-repeat: no-repeat;
+  background-position: 0 18px;
+  background-size: 100% 28px;
+}
+
+/* Trash lid handle */
+.trash-icon::before {
+  box-shadow: 
+    2px 2px 0 var(--mac-dark-gray),
+    3px 3px 0 var(--mac-black),
+    inset 0 -8px 0 0 var(--mac-gray); /* Creates handle indent */
+}
+
+.mac-icon:has(.trash-icon) .icon-label {
+  margin-top: -6px; /* Negative margin to bring label closer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .mac-sidebar {
+    right: 15px;
+    top: 50px;
+    bottom: 15px;
+    gap: 15px;
+  }
+  
+  .mac-icon:has(.trash-icon) {
+    padding-top: 20px; /* Less padding on tablets */
+  }
+  
+  .mac-icon {
+    width: 56px;
+    height: 56px;
+  }
+  
+  .doc-icon {
+    width: 42px;
+    height: 50px;
+  }
+  
+  .folder-icon {
+    width: 50px;
+    height: 42px;
+  }
+  
+  .mail-icon {
+    width: 50px;
+    height: 36px;
+  }
+  
+  .network-icon {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mac-sidebar {
+    position: static;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 10px;
+    background: var(--mac-gray);
+    border: 2px solid var(--mac-black);
+    box-shadow: 
+      inset -1px -1px 0 var(--mac-dark-gray),
+      inset 1px 1px 0 var(--mac-white);
+    bottom: auto;
+  }
+  
+  .mac-icon:has(.trash-icon) {
+    margin-top: 0; /* Reset margin-top */
+    padding-top: 0 !important; /* Reset padding-top with important to override */
+  }
+}
+
+@media (max-width: 480px) {
+  .mac-sidebar {
+    gap: 10px;
+    bottom: auto;
+  }
+  
+  .mac-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .icon-label {
+    font-size: 9px;
+  }
+}
+
+
