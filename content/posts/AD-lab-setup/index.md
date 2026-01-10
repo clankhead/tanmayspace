@@ -34,4 +34,4 @@ Its main protocols are:
 - RPC over SMB/CIFS for various functions not covered by the other protocols.
 
 
-
+[The Building Process](content/posts/AD-lab-setup/the-building-process) | [The Breaking Process](content/posts/AD-lab-setup/the-breaking-process)
