@@ -17,13 +17,21 @@ In simple words, it's a phone book that can be accessed over a network which con
 
 <img width="868" height="461" alt="image" src="https://github.com/user-attachments/assets/68443969-8544-47bf-b8b5-f4043ae3fe96" />
 
+As this blog is more of my understanding than an essay on AD, I will keep it short:
+AD is used for:
+- Authenticating users and computers
+- Locating computers by name
+- Applying policies to users and computers
+- Discovering and Locating services (MS Exchange, MS SQL Server, etc)
+- Storing certain configuration data
 
-## Requirements
-Right, now that we understand what AD is....what do we need to make this lab?
+And..
+Its main protocols are:
+- A variant of LDAP for distributing computer and user data
+- Kerberos for authentication
+- DNS for resolving services and computer names to addresses
+- SMB/CIFS for file replication and various other auxiliary functions.
+- RPC over SMB/CIFS for various functions not covered by the other protocols.
 
-As AD most common for windows systems. We need to download a few ISO files. 
-Specifically these:
-  - For Domain Controller: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022
-  - For User Machines: https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise
 
 
