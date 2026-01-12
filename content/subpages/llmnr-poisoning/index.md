@@ -1,3 +1,9 @@
+---
+title: "LLMNR Poisoning"
+_build:
+  list: never
+---
+
 
 -> A general idea of how LLMNR is leveraged for an attack:  
 ![llmnr](images/llmnr.png)
