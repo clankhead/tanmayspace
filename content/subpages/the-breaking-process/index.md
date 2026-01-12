@@ -13,10 +13,10 @@ Every foothold, escalation, and lateral movement I achieved in this lab came fro
 
 To keep myself organized, I broke the attack process into the following phases:
 
-I. Initial Attack Vector
-II. Post-Compromise Enumeration
-III. Post-Compromise Attacks
-IV. Post-Domain Compromise Attacks
+I. Initial Attack Vector  
+II. Post-Compromise Enumeration  
+III. Post-Compromise Attacks  
+IV. Post-Domain Compromise Attacks  
 
 I also explored a set of last-resort Active Directory attacks for cases where no clear escalation paths were immediately available.
 
