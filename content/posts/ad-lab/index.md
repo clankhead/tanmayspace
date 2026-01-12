@@ -34,4 +34,4 @@ Its main protocols are:
 - RPC over SMB/CIFS for various functions not covered by the other protocols.
 
 
-[The Building Process](/content/subpages/the-building-process/) | [The Breaking Process](/content/subpages/the-breaking-process/)
+[The Building Process](/subpages/the-building-process/) | [The Breaking Process](/subpages/the-breaking-process/)
