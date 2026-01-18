@@ -20,7 +20,7 @@ _build:
 4. Crack the hash using something like hashcat 
 
 
-## Lab
+## How I went about it
 
 1.  `nmap `
 
