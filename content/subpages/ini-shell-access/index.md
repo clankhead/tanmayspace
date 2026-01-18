@@ -18,7 +18,7 @@ Different ways:
 
 ---
 
-## Lab
+## How I went about it
 
 ### Metasploit method using password
 1. load msfconsole
