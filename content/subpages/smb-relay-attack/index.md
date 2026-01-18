@@ -43,7 +43,7 @@ Other Wins:
 
 ----
 
-## Lab
+## How I went about it
 
 1. see if smb signing is enabled or not 
    `nmap --script=smb2-security-mode.nse -p445 192.167.138.136 -Pn  `  (Can also put CIDR in place of IP to sweep the whole subnet - 192.167.138.0/24)
