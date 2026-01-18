@@ -20,7 +20,7 @@ Basic Idea of the attack:
 
 ---
 
-## Lab
+## How I went about it
 
 ```
 Install mitm6 on kali
