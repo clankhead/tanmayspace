@@ -15,7 +15,7 @@ Instead of cracking hashes gathered with Responder, we can instead relay those h
 nmap --script=smb2-security-mode.nse -p445 <IP/CIDR> -Pn  
 ```
 
-![Pasted image 20251114001027](images/Pasted-image-20251114001027.png)
+![Pasted image 20251114001027](images/Pasted-image-20251114001027.png)  
 LOOKING FOR MESSAGE SIGNING ENABLED BUT NOT  REQUIRED
 
 #### SMB Relay attack steps on identifies target(s)
