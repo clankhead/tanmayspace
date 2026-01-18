@@ -1,3 +1,8 @@
+---
+title: "IPv6 MITM"
+_build:
+  list: never
+---
 
 ......DNS takeover attacks over IPv6
 ......Kind of like relaying
