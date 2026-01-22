@@ -16,5 +16,4 @@ cd marvel.local
 Step 2:
 `sudo ldapdomaindump ldaps://192.168.138.136 -u 'MARVEL\fcastle' -p Password1 -o`
 
-![[Pasted image 20251130154734.png]]
-
+![Pasted image 20251130154734](images/Pasted-image-20251130154734.png)
