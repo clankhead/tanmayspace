@@ -21,7 +21,8 @@ sudo pip3 install -r requirements.txt
  IMPORTANT! - need to keep bloodhound running in neo4j to utilize plumhound as it analyses the information injested from bloodhound in neo4j
 
 Step 2:
- `sudo python3 PlumHound.py --easy -p neo4j1`     :    -p is for password set for neo4j![[Pasted image 20251201215128.png]]
+ `sudo python3 PlumHound.py --easy -p neo4j1`     :    -p is for password set for neo4j  
+ ![Pasted image 20251201215128](images/Pasted-image-20251201215128.png)
  
 Step 3:
 `sudo python3 PlumHound.py -x tasks/default.tasks -p neo4j1`
