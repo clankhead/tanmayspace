@@ -33,7 +33,7 @@ Attacks performed:
 ## II. Post-Compromise Enumeration
 Once I had initial access, enumeration became the most important activity. This was the phase where the environment started to make sense, and where most of my progress originated.
 Enumeration performed using:
-- [ldapdomaindump](/subpages/ldapdomaindump)
+- [Ldapdomaindump](/subpages/ldapdomaindump)
 - [BloodHound](/subpages/bloodhound)
 - [PlumHound](/subpages/plumhound)
 - [PingCastle](/subpages/pingcastle)
