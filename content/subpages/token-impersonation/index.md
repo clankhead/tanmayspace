@@ -19,7 +19,7 @@ Pop a shell and load incognito
 
 
 
-## Lab
+## How I went about it
 
 Followed the "Gaining shell" note and basically got a shell on fcastle using the password via metasploit -> [[III. Gaining Shell Access]]  
 ![Pasted image 20251218195544](images/Pasted-image-20251218195544.png)
