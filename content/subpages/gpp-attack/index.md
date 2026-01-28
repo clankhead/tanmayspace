@@ -6,17 +6,17 @@ _build:
 
 a.k.a cPassword Attack  
 
-Group Policy Preferences (GPP) allowed admins to create policies using embedded credentials  
+-> Group Policy Preferences (GPP) allowed admins to create policies using embedded credentials  
 
-These Credentials were encrypted and placed in a "cPassword"  
+-> These Credentials were encrypted and placed in a "cPassword"  
 
-The key was accidentally released to this "cPassword"  
+-> The key was accidentally released to this "cPassword"  
 
-Patched in MS14-025, but it doesn't prevent previous users  
+-> Patched in MS14-025, but it doesn't prevent previous users  
 
-STILL RELEVANT ON PENTESTS (according to Heath Adams)  
+->> STILL RELEVANT ON PENTESTS (according to Heath Adams)  
 
-From a real pentest: (msfconsole - inverted colors)  
+Examples from a real pentest by tcm-sec: (msfconsole - inverted colors)  
 ![Pasted image 20251222193454](images/Pasted-image-20251222193454.png)  
 
 ![Pasted image 20251222193802](images/Pasted-image-20251222193802.png)
