@@ -21,7 +21,7 @@ From a real pentest: (msfconsole - inverted colors)
 
 ![Pasted image 20251222193802](images/Pasted-image-20251222193802.png)
 
----
+
 ## Process  
 1. use msfconsole
 2. RUN smb_enum_gpp after srtting apt OPTIONS
@@ -29,8 +29,6 @@ From a real pentest: (msfconsole - inverted colors)
 
 ![Pasted image 20251222202337](images/Pasted-image-20251222202337.png)
 
-
----
 
 ## Mitigation
 
