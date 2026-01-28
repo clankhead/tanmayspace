@@ -44,6 +44,7 @@ To define a module just do `-M <name>` at the end, eg: `crackmapexec smb 192.168
 - lsass is responsible for enforcing the security policy on a system, but for whatever reason it store CREDENTIALS   
 - So if there is a user logged in, this may be able to dump out credentials in real time
 
+
 ### 2.5. CME Database
 ![Pasted image 20251203031535](images/Pasted-image-20251203031535.png)  
 
