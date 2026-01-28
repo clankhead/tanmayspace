@@ -41,7 +41,7 @@ Enumeration performed using:
 ## III. Post-Compromise Attacks
 Armed with a clearer picture of domain relationships and misconfigurations, I moved into privilege escalation and lateral movement.
 Attacks performed:
-- [Pass-the-Hash and Pass-the-Ticket Attacks](/subpages/passing-hash&tickets)
+- [Pass-the-Hash and Pass-the-Ticket Attacks](/subpages/passing-hashandtickets)
 - [Kerberoasting](/subpages/kerberoasting)
 - [Token Impersonation](/subpages/token-impersonation)
 - [LNK File Attacks](/subpages/lnk-f-attack)
