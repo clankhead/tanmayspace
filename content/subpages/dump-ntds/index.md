@@ -1,5 +1,5 @@
 ---
-title: "Token Impersonation"
+title: "Dumping NTDS.dit"
 _build:
   list: never
 ---
