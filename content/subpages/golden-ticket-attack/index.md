@@ -1,5 +1,5 @@
 ---
-title: "Token Impersonation"
+title: "Golden Ticket Attacks"
 _build:
   list: never
 ---
