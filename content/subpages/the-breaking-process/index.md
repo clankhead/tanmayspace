@@ -53,7 +53,7 @@ After reaching domain-level compromise, I focused on understanding what full con
 Attacks performed:
 - [Dumping NTDS.dit](/subpages/dump-ntds)
 - [Golden Ticket Attack](/subpages/golden-ticket-attack)
-- [Last Resort Active Directory Attacks](/subpages/last-resort-ad-attacks)
+- [Last Resort Active Directory Attacks](/subpages/last-resort-ad-attacks)  (unfinished)
 
 Finally, I explored additional techniques that can still be relevant when more direct attack paths fail.
 
