@@ -4,13 +4,13 @@ _build:
   list: never
 ---
 
-Kind of password/hash spraying
+Kind of password/hash spraying  
 
 
-.............Pass the Password / Pass the Hash
-.............Exploit PASSWORD REUSE
+.............Pass the Password / Pass the Hash  
+.............Exploit PASSWORD REUSE  
 
-Tool 1 : crackmapexec (CME)
+Tool 1 : crackmapexec (CME)  
 Tool 2 : secretsdump.py
 
 ## 1. Pass the password
