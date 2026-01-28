@@ -12,7 +12,7 @@ Step 2: Crack the hash
 
 
 ## How I went about it
-
+->  
 `sudo GetUserSPNs.py MARVEL.local/fcastle:Password1 -dc-ip 192.168.138.136 -request`  
 
 ![Pasted image 20251206182023](images/Pasted-image-20251206182023.png)  
