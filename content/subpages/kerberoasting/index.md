@@ -1,3 +1,8 @@
+---
+title: "Kerberoasting"
+_build:
+  list: never
+---
 
 ![Pasted image 20251206143440](images/Pasted-image-20251206143440.png)
 
