@@ -5,7 +5,7 @@ date: 2025-10-08
 tags: ["cybersecurity", "Active Direectory"]
 ---
 
-note: if learning about the attacks on AD directory is the goal, check out: https://github.com/Orange-Cyberdefense/GOAD. This blog demonstrates my knowledge of enumeration and exploitation of active directory.  
+note: if learning about the attacks on AD directory is the goal, check out: https://github.com/Orange-Cyberdefense/GOAD. This blog is focused on demonstrates *my* knowledge of enumeration and exploitation of active directory.  
 
 According to microsoft's website, Active Directory (AD) provides the methods for storing directory data and making this data available to network users and administrators.  
 In simple words, it's a phone book that can be accessed over a network which contains information on computers, user, printers etc. Authentication on windows is done through Kerberos and Kerberos Tickets. For other systems (linux, mac) it uses protocols like RADIUS, LDAP (Lightweight Directory Access Protocol).  
