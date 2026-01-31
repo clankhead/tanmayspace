@@ -31,8 +31,17 @@ Its main protocols are:
 - Kerberos for authentication
 - DNS for resolving services and computer names to addresses
 - SMB/CIFS for file replication and various other auxiliary functions.
-- RPC over SMB/CIFS for various functions not covered by the other protocols.
+- RPC over SMB/CIFS for various functions not covered by the other protocols.  
 
+## The Lab  
+This project is split into two parts: building the lab environment and then systematically breaking it.  
 
-[The Building Process](/subpages/the-building-process/)  
-[The Breaking Process](/subpages/the-breaking-process/)
+## [The Building Process](/subpages/the-building-process/)  
+Setting up a vulnerable AD environment from scratch. This covers spinning up a Domain Controller running Windows Server 2022, configuring Active Directory Domain Services and Certificate Services, and joining two Windows 10 workstations (THEPUNISHER and SPIDERMAN) to the domain. Everything runs on VMs, so you'll need around 180 GB of disk space and at least 16 GB of RAM.  
+
+## [The Breaking Process](/subpages/the-breaking-process/)
+Once the lab was running, I worked through attacking it end to end. The attacks are organized into four phases:  
+- Initial Attack Vector — LLMNR Poisoning, SMB Relay, IPv6 attacks, and getting that first shell
+- Post-Compromise Enumeration — Using tools like BloodHound, ldapdomaindump, PlumHound, and PingCastle to map out the domain
+- Post-Compromise Attacks — Pass-the-Hash, Kerberoasting, Token Impersonation, credential dumping, and more
+- Post-Domain Compromise — Dumping NTDS.dit, Golden Ticket attacks, and persistence
