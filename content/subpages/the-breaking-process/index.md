@@ -9,7 +9,9 @@ The obvious question was where to start.
 
 This was my first time seriously attacking Active Directory end to end, so I needed a clear structure rather than trial and error. What became apparent very quickly was that success in AD has far less to do with individual exploits and far more to do with methodical enumeration. Enumeration is not just a phase you pass through once, but something you return to after every new piece of access.
 
-Every foothold, escalation, and lateral movement I achieved in this lab came from gradually understanding how the environment was put together. As I learned more about the domain, new attack paths became visible, and earlier assumptions often had to be revised. In that sense, Active Directory rewards careful observation more than speed or creativity.
+Every foothold, escalation, and lateral movement I achieved in this lab came from gradually understanding how the environment was put together. As I learned more about the domain, new attack paths became visible, and earlier assumptions often had to be revised. In that sense, Active Directory rewards careful observation more than speed or creativity.  
+
+![admeme2](images/admeme2.png)
 
 To keep myself organized, I broke the attack process into the following phases:
 
