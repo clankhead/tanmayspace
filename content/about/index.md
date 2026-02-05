@@ -41,52 +41,6 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
   </div>
 </div>
 
-## Certifications & Achievements
-
-<div class="certifications-section">
-  <div class="terminal-card">
-    <header>Certifications</header>
-    <div>
-      <p><strong>Completed:</strong> [CompTIA Security+](https://www.credly.com/badges/4dcce657-cbad-4be2-b84e-c320ada65664/public_url),  AWS Academy Cloud Security Foundations</p>
-      <p><strong>In Progress:</strong> PNPT (Practical Network Penetration Tester), HTB CBBH Certificate</p>
-    </div>
-  </div>
-
-  <div class="terminal-card">
-    <header>Achievements</header>
-    <div>
-      <ul>
-        <li>SimSpace Cyber Cup 2025 Top 6</li>
-        <li>Imaginary CTF - Rank 45 out of 1414</li>
-        <li>Pwn.college white belt</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-## Education
-
-<div class="terminal-timeline">
-  <div class="terminal-card">
-    <header>December 2026 (Expected)</header>
-    <div>
-      <strong>Northeastern University</strong><br>
-      <em>Master of Science, Cybersecurity</em><br>
-      <small>Boston, MA | GPA: 3.58/4.00</small>
-      <p><strong>Relevant Coursework:</strong> Network Security, Binary Exploitation, Reverse Engineering, Security Risk and Management, Cyberlaw</p>
-    </div>
-  </div>
-  
-  <div class="terminal-card">
-    <header>June 2024</header>
-    <div>
-      <strong>SRM Institute of Science and Technology</strong><br>
-      <em>Bachelor of Technology, Computer Science and Engineering</em><br>
-      <small>Chennai, India | GPA: 8.97/10.00</small>
-      <p><strong>Relevant Coursework:</strong> Operating Systems, Computer Architecture, Network Security and Offensive Security</p>
-    </div>
-  </div>
-</div>
 
 ## Work Experience
 
@@ -129,6 +83,54 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
         <li>Organized and Outreached for Null CTF event - Hades</li>
         <li>Facilitated outreach to security professionals and meetups, securing guest speakers to enhance the club's events and reputation</li>
       </ul>
+    </div>
+  </div>
+</div>
+
+
+## Certifications & Achievements
+
+<div class="certifications-section">
+  <div class="terminal-card">
+    <header>Certifications</header>
+    <div>
+      <p><strong>Completed:</strong> [CompTIA Security+](https://www.credly.com/badges/4dcce657-cbad-4be2-b84e-c320ada65664/public_url),  AWS Academy Cloud Security Foundations</p>
+      <p><strong>In Progress:</strong> PNPT (Practical Network Penetration Tester)</p>
+    </div>
+  </div>
+
+  <div class="terminal-card">
+    <header>Achievements</header>
+    <div>
+      <ul>
+        <li>SimSpace Cyber Cup 2025 Top 6</li>
+        <li>Top ranks in numerous CTFs</li>
+        <li>Pwn.college white belt</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+## Education
+
+<div class="terminal-timeline">
+  <div class="terminal-card">
+    <header>December 2026 (Expected)</header>
+    <div>
+      <strong>Northeastern University</strong><br>
+      <em>Master of Science, Cybersecurity</em><br>
+      <small>Boston, MA | GPA: 3.58/4.00</small>
+      <p><strong>Relevant Coursework:</strong> Network Security, Binary Exploitation, Reverse Engineering, Security Risk and Management, Cyberlaw</p>
+    </div>
+  </div>
+  
+  <div class="terminal-card">
+    <header>June 2024</header>
+    <div>
+      <strong>SRM Institute of Science and Technology</strong><br>
+      <em>Bachelor of Technology, Computer Science and Engineering</em><br>
+      <small>Chennai, India | GPA: 8.97/10.00</small>
+      <p><strong>Relevant Coursework:</strong> Operating Systems, Computer Architecture, Network Security and Offensive Security</p>
     </div>
   </div>
 </div>
