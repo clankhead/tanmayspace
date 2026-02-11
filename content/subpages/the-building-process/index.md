@@ -22,7 +22,7 @@ I followed the PEH course by TCM Security to build this lab, which is why I inst
 We will be building this entire lab on virtual machines so open your favourite hypervisor software, keep all your necessary ISOs downloaded, brew that coffee and let's get started.
 
 
-### Domain Controller
+## Domain Controller
 We will start with setting up the Domain Controller first. This is a server that uses the active directory to authenticate and authorize domain access active directory.
 
 ![Pasted image 20260101194421](images/Pasted-image-20260101194421.png)
