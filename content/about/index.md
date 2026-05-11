@@ -46,6 +46,19 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
 
 <div class="terminal-timeline">
   <div class="terminal-card">
+    <header>January 2026 – April 2026</header>
+    <div>
+      <strong>Khoury College of Computer Sciences</strong><br>
+      <em>Teaching Assistant</em><br>
+      <small>Boston, MA</small>
+      <ul>
+        <li>blah blah blah</li>
+      </ul>
+    </div>
+  </div>
+
+<div class="terminal-timeline">
+  <div class="terminal-card">
     <header>Spring 2025 – August 2025</header>
     <div>
       <strong>CyberspACe securiTy and forensIcs lab (CactiLab)</strong><br>
@@ -128,7 +141,7 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
 
 <div class="terminal-timeline">
   <div class="terminal-card">
-    <header>December 2026 (Expected)</header>
+    <header>May 2026</header>
     <div>
       <strong>Northeastern University</strong><br>
       <em>Master of Science, Cybersecurity</em><br>
