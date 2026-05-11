@@ -45,7 +45,7 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
 ## Work Experience
 
 <div class="terminal-timeline">
-  <div class="terminal-card">
+    <div class="terminal-card">
     <header>January 2026 – April 2026</header>
     <div>
       <strong>Khoury College of Computer Sciences</strong><br>
@@ -56,8 +56,7 @@ Experienced Technical Lead and Project Intern with a background in cybersecurity
       </ul>
     </div>
   </div>
-
-<div class="terminal-timeline">
+  
   <div class="terminal-card">
     <header>Spring 2025 – August 2025</header>
     <div>
