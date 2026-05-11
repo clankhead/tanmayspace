@@ -1,7 +1,7 @@
 ---
 title: "Phishing Hook"
 date: 2023-04-21
-github: "https://github.com/d3adp0et/Phishing-Hook"
+github: "https://github.com/clankhead/Phishing-Hook"
 summary: "A Phishing Detection Sytem."
 ---
 

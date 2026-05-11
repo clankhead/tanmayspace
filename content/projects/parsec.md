@@ -1,7 +1,7 @@
 ---
 title: "PARSEC - Platform for Azure Response & Security Event Correlation"
 date: 2024-11-03
-github: "https://github.com/d3adp0et/PARSEC"
+github: "https://github.com/clankhead/PARSEC"
 summary: "A Scalable Azure-Based SIEM for Centralized Security Event Collection and Analysis"
 ---
 
