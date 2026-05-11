@@ -12,6 +12,17 @@
     <div class="container">
       {{ partial "nav.html" . }}
 
+      <details class="mobile-menu">
+        <summary class="mobile-menu-toggle" aria-label="Toggle menu">☰</summary>
+        <ul class="mobile-menu-list">
+          <li><a href="/Tanmay_Sharma_Resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="https://github.com/clankhead" target="_blank">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/tanmay-sharma-36663716b/" target="_blank">LinkedIn</a></li>
+          <li><a href="mailto:sharma.tanm@northeastern.edu">Mail</a></li>
+          <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">Trash</a></li>
+        </ul>
+      </details>
+
       <!-- Mac Icons Sidebar -->
       <div class="mac-sidebar">
         <!-- Resume Icon -->
@@ -57,7 +68,7 @@
           <div class="window-zoom-box"></div>
           <div class="window-stripes"></div>
           <div class="window-title">
-            {{ if .IsHome }}Home{{ else if and (eq .Kind "page") (eq .Section "") }}About{{ else if eq .Section "posts" }}{{ if .IsSection }}Posts{{ else }}{{ .Title }}{{ end }}{{ else if eq .Section "photos" }}{{ if .IsSection }}Photos{{ else }}{{ .Title }}{{ end }}{{ else }}{{ .Title }}{{ end }}
+            {{ if .IsHome }}Home{{ else if and (eq .Kind "page") (eq .Section "") }}Background{{ else if eq .Section "posts" }}{{ if .IsSection }}Posts{{ else }}{{ .Title }}{{ end }}{{ else if eq .Section "photos" }}{{ if .IsSection }}Photos{{ else }}{{ .Title }}{{ end }}{{ else }}{{ .Title }}{{ end }}
           </div>
         </div>
         <div class="window-content">
@@ -67,6 +78,8 @@
           {{ end }}
         </div>
       </main>
+
+      <footer class="mobile-footer"><span class="mobile-footer-text">MIT License - Designed &amp; developed by d3adp0et, powered by Hugo + Terminal CSS.</span></footer>
 
     </div>
 </body>
